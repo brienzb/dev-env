@@ -1,2 +1,2 @@
-# dev-env
-Development Environment
+# Development Environment
+This repository contains information related to the development environment.
