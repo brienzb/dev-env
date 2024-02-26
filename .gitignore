@@ -1,0 +1,8 @@
+.DS_Store
+.vscode
+
+.env
+
+mygodis/data/mysql/
+mygodis/data/mongodb/
+mygodis/data/redis/
