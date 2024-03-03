@@ -25,7 +25,7 @@ services:
       - ${MONGO_DATA_PATH}:/data/db
   redis:
     container_name: redis
-    image: ${REDIS_DOCKER_IMAEG}
+    image: ${REDIS_DOCKER_IMAGE}
     ports:
       - 6379:6379
     volumes:
