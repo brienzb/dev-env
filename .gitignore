@@ -4,6 +4,6 @@
 
 .env
 
-mygodis/data/mysql/
-mygodis/data/mongodb/
-mygodis/data/redis/
+dbocker/data/mysql/
+dbocker/data/mongodb/
+dbocker/data/redis/
