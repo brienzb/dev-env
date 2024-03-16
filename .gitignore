@@ -4,6 +4,4 @@
 
 .env
 
-dbocker/data/mysql/
-dbocker/data/mongodb/
-dbocker/data/redis/
+dbocker/data/

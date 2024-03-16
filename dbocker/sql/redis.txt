@@ -1,0 +1,8 @@
+keys *
+
+set test_user1 '{"name": "user1", "email": "user1@example.com", "gender": "M", "age": 26}'
+set test_user2 '{"name": "user2", "email": "user2@example.com", "gender": "M", "age": 35}'
+set test_user3 '{"name": "user3", "email": "user3@example.com", "gender": "F", "age": 17}'
+
+get test_user1
+mget test_user1 test_user2 test_user3

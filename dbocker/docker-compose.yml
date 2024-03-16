@@ -30,11 +30,33 @@ services:
       - 6379:6379
     volumes:
       - ${REDIS_DATA_PATH}:/data
+#  hive-metastore:
+#    container_name: hive-metastore
+#    image: ${HIVE_DOCKER_IMAGE}
+#    ports:
+#      - 9083:9083
+#    environment:
+#      SERVICE_NAME: "metastore"
+#      DB_DRIVER: "postgres"
+#      SERVICE_OPTS: "
+#        -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
+#        -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres:5432/metastore_db
+#        -Djavax.jdo.option.ConnectionUserName=hive
+#        -Djavax.jdo.option.ConnectionPassword=hive"
+#    volumes:
+#      - ${POSTGRESQL_JDBC_DRIVER}:/opt/hive/lib/postgres.jar
+#      - ${HIVE_METASTORE_DB_PATH}:/opt/hive/data/warehouse
   hive:
     container_name: hive
     image: ${HIVE_DOCKER_IMAGE}
+#    depends_on:
+#      - hive-metastore
     ports:
       - 10000:10000
       - 10002:10002
     environment:
       SERVICE_NAME: "hiveserver2"
+#      SERVICE_OPTS: "-Dhive:metastore:uris=thrift://metastore:9083"
+#      IS_RESUME: "true"
+    volumes:
+      - ${HIVE_DATA_PATH}:/opt/hive/data/warehouse

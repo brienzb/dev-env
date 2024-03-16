@@ -19,5 +19,6 @@ docker compose up
 ```
 
 ## Todo
-- [ ] Mount Hive data in local `./data`
+- ~~Mount Hive data in local `./data`~~
+  - Need connecting postgres to Metastore (TBD)
 - [ ] Add Trino container

@@ -1,0 +1,13 @@
+show dbs
+
+use dbocker_db
+
+db.createCollection("test_table");
+
+show collections
+
+db.test_table.insertOne({"name": "user1", "email": "user1@example.com", "gender": "M", "age": 26});
+db.test_table.insertOne({"name": "user2", "email": "user2@example.com", "gender": "M", "age": 35});
+db.test_table.insertOne({"name": "user3", "email": "user3@example.com", "gender": "F", "age": 17});
+
+db.test_table.find();
