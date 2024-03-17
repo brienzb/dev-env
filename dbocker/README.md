@@ -12,7 +12,7 @@ Docker compose file that can run various database at once
 
 ### 1. Set Environment Variables
 ```bash
-cp .env.template .env
+vi .env
 
 # And fill in the values of the variables
 PROJECT_PATH=...

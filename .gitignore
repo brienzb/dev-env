@@ -2,6 +2,5 @@
 .vscode
 .idea
 
-.env
-
+test/
 dbocker/data/
