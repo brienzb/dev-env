@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  mysql:
+    container_name: mysql
+    image: ${MYSQL_DOCKER_IMAGE}
+    ports:
+      - "3306:3306"
+    environment:
+      TZ: Asia/Seoul
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - ${MYSQL_DATA_PATH}:/var/lib/mysql
+  mongodb:
+    container_name: mongodb
+    image: ${MONGO_DOCKER_IMAGE}
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+    volumes:
+      - ${MONGO_DATA_PATH}:/data/db
+  redis:
+    container_name: redis
+    image: ${REDIS_DOCKER_IMAGE}
+    ports:
+      - "6379:6379"
+    volumes:
+      - ${REDIS_DATA_PATH}:/data
